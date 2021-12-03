@@ -21,7 +21,7 @@ function TodoList() {
 
     const updateUser = async (user, list) => {
         try {
-            console.log(BASE_URL)
+            // console.log(BASE_URL)
             const url = BASE_URL;
             const response = await axios.post(`${url}/update/${user.id}`, { list });
             if (response.data.success) dispatch(signIn(response.data.user));

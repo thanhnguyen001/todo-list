@@ -51,6 +51,10 @@ function SignForm() {
     const password = useRef(watch("password", ""));
     password.current = watch("password", "");
 
+    const handleWithoutLogin = () => {
+        if (formRef) formRef.current.classList.remove("active");
+    }
+
     return (
         <div className={`form ${(user && user.username) ? "" : "active"}`} ref={formRef}>
             <div className="form-wrap">
@@ -59,6 +63,7 @@ function SignForm() {
                     <div className="form-heading">
                         <div className={`form-heading-item ${mode === "Sign In" ? "active" : ""}`} onClick={() => setMode("Sign In")} >Sign In</div>
                         <div className={`form-heading-item ${mode === "Sign Up" ? "active" : ""}`} onClick={() => setMode("Sign Up")} >Sign Up</div>
+                        <div className={`form-heading-item test`} onClick={handleWithoutLogin}>For Testing</div>
                     </div>
 
                     <div className="error response-error"></div>

@@ -108,6 +108,8 @@ function NewTask(props) {
         dispatch(addOrUpdateTask({
             id: item ? item.id : -1, title, description, dueDate: moment(date).toISOString(), priority, isUpdate: item ? true : false
         }));
+        alert("Updated successfully");
+
         if (item) return;
         setTitle("");
         setDescription("");
